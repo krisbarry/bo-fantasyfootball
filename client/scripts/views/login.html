@@ -1,0 +1,33 @@
+<div class="row login-page">
+	<div class="col-xs-12 col-sm-3 col-md-4"></div>
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<section class="app-widget">
+			<header class="app-widget-header">
+				<h5>Login</h5>
+			</header>
+			<div class="login-body">
+				<form class="form-horizontal" role="form" ng-submit="login()">
+					<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.msg}}</uib-alert>
+   					<div class="form-group">
+      					<label class="col-xs-12" for="emailAddress">Email Address:</label>
+      					<div class="col-xs-12">
+        					<input type="email" id="emailAddress" class="form-control" ng-model="emailAddress" placeholder="Email address...">
+      					</div>
+    				</div>
+				    <div class="form-group">
+				    	<label class="col-xs-12" for="password">Password:</label>
+      					<div class="col-xs-12">
+        					<input type="password" id="password" class="form-control" ng-model="password" placeholder="Password...">
+      					</div>
+    				</div>
+    				<div class="form-group">        
+      					<div class="col-xs-12 button-wrapper">
+        					<button type="submit" class="btn btn-default">Login</button>
+      					</div>
+    				</div>
+  				</form>
+			</div>
+		</section>
+	</div>
+	<div class="col-xs-12 col-sm-3 col-md-4"></div>
+</div>

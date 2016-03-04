@@ -1,0 +1,22 @@
+<div class="col-xs-12">
+	<section class="app-widget">
+		<header class="app-widget-header">
+			<h5 class="Bids-title">Bids Awaiting Action</h5>
+			<div class="clear-both"></div>
+		</header>
+		<div class="app-widget-body">
+			<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.msg}}</uib-alert>
+			<ul class="list bid-list">
+				<li ng-repeat="bid in bids">
+					<p class="col-xs-8 col-sm-9 bid-name">{{ ::bid.name }}</p>
+					<div class="col-xs-4 col-sm-3 app-functions">
+						<div class="app-function">
+							<a ng-click="deleteBid(bid._id,bid.name)"><i class="fa fa-trash"></i></a>
+						</div>
+					</div>
+					<div class="clear-both"></div>
+				</li>
+			</ul>
+		</div>
+	</section>
+</div>

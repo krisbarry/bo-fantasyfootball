@@ -1,0 +1,26 @@
+{
+    "name": "fantasyfootball",
+    "version": "1.1.00000",
+    "description": "This fantasy football app is a PoC I'm building for educational purposes.",
+		"repository": {
+			"type": "git",
+			"url": "git@github.com:krisbarry/fantasyfootball.git"
+		},
+    "license": "MIT",
+		"author": "Kristopher Barry <kris@krisbarry.com>",
+    "scripts": {
+	"start": "blueoak-server",
+        "lint": "eslint --ignore-pattern node_modules **/*.js",
+        "test": "mocha --check-leaks --globals services,__appDir test/unit; npm run lint"
+    },
+    "dependencies": {
+        "blueoak-server": "^2.0.0",
+        "request": "^2.51.0",
+	"mongoose": "^4.4.4"
+    },
+    "devDependencies": {
+        "eslint": "^1.10.3",
+        "eslint-config-defaults": "^8.0.2",
+        "mocha": "^2.3.4"
+    }
+}

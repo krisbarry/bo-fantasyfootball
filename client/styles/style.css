@@ -1,0 +1,395 @@
+html {
+	min-height: 100%;
+}
+.clear-both {
+	clear: both;
+}
+body.ff-app {
+	color: #fff;
+    font-size: 13px;
+	font-family: "Open Sans",sans-serif;
+    background-image: radial-gradient(67% 67%,,ellipse cover,#a9bea5 0%,#565656 100%);
+    background-image: -o-radial-gradient(67% 67%,,ellipse cover,#a9bea5 0%,#565656 100%);
+	background-image: -moz-radial-gradient(67% 67%,,ellipse cover,#a9bea5 0%,#565656 100%);
+	background-image: -webkit-radial-gradient(67% 67%,ellipse cover,#a9bea5 0%,#565656 100%);
+	/*background-image: -webkit-radial-gradient(67% 67%,ellipse cover,#b3b7b2 0%,#565656 100%);
+	background-image: -webkit-radial-gradient(67% 67%,ellipse cover,#C1E1A6 0%,#585858 100%);*/	
+}
+
+.ff-app .list {
+	padding: 0;
+	list-style-type: none;
+}
+.ff-app .list > li {
+	clear: both;
+	padding: 3px 0;
+}
+.ff-app .navbar {
+    margin: 0;
+    border: none;
+	min-height: 40px;
+    background: transparent;
+}
+.ff-app .navbar .navbar-brand {
+    color: #fff;
+    height: inherit;
+    font-size: 20px;
+    padding: 20px 30px;
+}
+.ff-app .navbar .navbar-brand:hover {
+	color: inherit;
+}
+.ff-app .navbar .navbar-right {
+	margin: 0;
+	padding: 10px 20px;
+}
+.ff-app .navbar .navbar-right li {
+	float: left;
+	margin: 0 3px;
+}
+.ff-app .navbar .navbar-right .dropdown-menu {
+    background-color: rgba(25,25,25,.65);
+}
+.ff-app .navbar .navbar-right .dropdown-menu li {
+	margin: 0;
+	width: 100%;
+}
+.ff-app .navbar .navbar-right .dropdown-menu li .divider {
+	height: 1px;
+	margin: 5px 10px;
+	background-color: #fff;
+}
+.ff-app .navbar .navbar-right .dropdown-menu li a {
+	color: #fff;
+	margin: 0 10px;
+	padding: 5px 15px;
+	background-color: inherit;
+}
+.ff-app .navbar .navbar-right .dropdown-menu li a:hover {
+	color: #ccc;
+}
+.ff-app .navbar .navbar-right .dropdown-menu li a .fa {
+	padding: 0 5px 0 0;
+}
+.ff-app .navbar .navbar-toggle {
+	border-color: #fff;
+}
+.ff-app .navbar .navbar-toggle:focus, .ff-app .navbar .navbar-toggle:hover, .ff-app .navbar .navbar-toggle:link {
+	background-color: inherit;
+}
+.ff-app .navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+.ff-app .navbar-top-links .search {
+	max-width: 250px;
+}
+.ff-app .navbar .search input {
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+    background-color: rgba(33,33,33,.33);
+}
+.ff-app .navbar .search .btn {
+    border: none;
+    outline: none;
+    margin-left: -35px;
+    background: inherit;
+}
+.ff-app .navbar .search .fa-search {
+	color: #fff;
+}
+.ff-app .navbar .sidebar .nav a {
+	color: #fff;
+	padding: 10px;
+}
+.ff-app .navbar .dropdown-toggle, .ff-app .navbar .sidebar .nav .fa {
+    font-size: 14px;
+	color: #ccc;
+#	color: rgba(25,25,25,.65);
+}
+.ff-app .navbar .sidebar .nav .fa {
+	width: 20%;
+}
+.ff-app .navbar .sidebar .nav .fa-home {
+    font-size: 18px;
+}
+.ff-app .navbar .dropdown-toggle:focus, .ff-app .navbar .dropdown-toggle:hover, .ff-app .navbar .dropdown-toggle:link {
+	background-color: inherit;
+}
+.ff-app .navbar .sidebar {
+    top: 75px;
+    width: 200px;
+    position: absolute;
+    background: inherit;
+    padding: 0 0 0 30px;
+}
+.ff-app .navbar .sidebar .nav > li {
+	border-radius: 3px;
+}
+.ff-app .navbar .sidebar .nav > li:hover {
+    background-color: rgba(33,33,33,.33);
+}
+.ff-app .navbar .sidebar .nav > li a:hover {
+    background: none;
+}
+.ff-app .navbar .sidebar .nav li a .fa {
+	padding: 0 6px 0 0;
+}
+.ff-app .navbar .sidebar .nav li a .fa.fa-angle-down {
+	width: 0;
+    color: #fff;
+    padding: 0 0 0 3px;
+}
+.ff-app .navbar .sidebar .nav .submenu {
+	padding; 0 0 3px;
+}
+.ff-app .navbar .sidebar .nav .submenu li {
+	padding: 10px 0;
+}
+.ff-app .navbar .sidebar .nav .submenu li a {
+	padding: 10px 0 10px 25px;
+}
+.ff-app .navbar .sidebar .nav .submenu li a:hover {
+	color: #ccc;
+	text-decoration: none;
+}
+.ff-app .navbar .sidebar .nav .submenu li .fa {
+	width: 15%;
+}
+.ff-app .login-page {
+	margin: 15px 15px 0;
+}
+.ff-app .login-body {
+	padding: 15px 30px 0;
+}
+.ff-app .league-standings {
+	margin: 0 0 5px;
+	font-size: 12px;
+	text-align: center;
+}
+.ff-app .league-standings .record-title {
+	margin: 0 0 5px;
+	font-size: 11px;
+}
+.ff-app .league-standings .league-standings-header {
+	margin: 0 0 7px;
+}
+.ff-app .league-standings .league-standings-player {
+	margin: 5px 0;
+}
+.ff-app .league-standings div[class*='col-'] {
+	padding: 0 3px;
+}
+.ff-app .league-standings .team-title {
+	text-align: left;
+}
+.ff-app .profile-body {
+	padding: 15px 5px 0;
+}
+.ff-app .form-group label {
+	font-size: 13px;
+	font-weight: normal;
+}	
+.ff-app .form-group input, .ff-app .form-group textarea {
+    color: #fff;
+    border: none;
+    box-shadow: none;
+    background-color: rgba(33,33,33,.33);
+}
+.ff-app .form-group button, .ff-app .form-group button:active {
+    color: #fff;
+    border: none;
+    outline: none;
+    margin: 10px 0 0;
+    padding: 10px 30px;
+    background-color: rgba(33,33,33,.33);
+}
+.ff-app .form-group .button-wrapper {
+	text-align: center;
+}
+.ff-app .ff-app-content .content {
+	padding: 0 30px;
+}
+.ff-app .ff-app-content .content.with-nav {
+	margin: 0 0 0 200px;
+}
+.ff-app .app-widget-header h5 {
+	font-size: 14px;
+}
+.ff-app .app-widget {
+	margin: 0 0 20px;
+	border-radius: 3px;
+	padding: 5px 15px 10px;
+    background: rgba(33,33,33,.33);
+}
+.ff-app .alert {
+	clear: both;
+    padding: 10px;
+    margin: 5px 0 0;
+}
+.ff-app .modal-body .alert {
+    margin: 0 0 15px;
+}
+.ff-app .login-body .alert {
+	text-align: center;
+	margin: -5px 0 15px;
+    background-color: #fff;
+}
+.ff-app .profile-body .alert {
+	margin: 0 0 15px;
+}
+.ff-app .modal-content {
+	color: #585858;
+}
+.ff-app .modal-header .modal-title {
+	font-size: 15px;
+}
+.ff-app .leagues-title {
+	float: left;
+}
+.ff-app .add-league,.ff-app .add-player {
+	color: #fff;
+	float: right;
+	font-size: 18px;
+	padding: 5px 3px 0 0;
+}
+.ff-app .league-list,.ff-app .player-list {
+	margin: 10px 0 5px;
+}
+.ff-app .league-list li,.ff-app .player-list li {
+	margin: 3px 0;
+	padding: 10px 0;
+}
+.ff-app .list li:hover {
+	border-radius: 3px;
+    background: rgba(33,33,33,.33);
+}
+.ff-app .league-list .league-name,.ff-app .player-list .player-name {
+	margin: 0;
+}
+.ff-app .app-function {
+    float: right;
+    padding: 0 10px;
+}
+.ff-app .app-functions i {
+	color: #fff;
+	font-size: 16px;
+}
+.ff-app .app-functions i.fa-edit {
+	margin: 2px 0 0;
+}
+.ff-app .modal-content .conferenceName {
+	margin: 0;
+	padding: 7px;
+	text-align: right;
+	white-space: nowrap;
+}
+.ff-app .league-details {
+	padding: 10px 0 0;
+}
+.ff-app .league-details .group-label {
+	margin: 0;
+    float: left;
+    padding: 3px 0 0 3px;
+}
+.ff-app .league-details .add-league-object {
+	color: #fff;
+    float: right;
+    padding: 3px;
+    font-size: 16px;
+}
+.ff-app .league-details .group-list {
+    margin: 3px 0 0;
+    min-height: 35px;
+    padding: 10px 3px;
+    border-radius: 3px;
+    background-color: rgba(33,33,33,.33);
+}
+.ff-app .league-details .group-list li {
+	margin: 2px 8px;
+	padding: 10px 0 8px;
+}
+.ff-app .league-details .group-list .team-name p {
+	margin: 0;
+}
+.ff-app .league-details .group-list .team-name .player-name {
+	font-size: 11px;
+}
+.ff-app .add-player-modal .fa-search {
+	padding: 3px;
+}
+.ff-app .add-player-modal .no-players-found {
+	width: 100%;
+	font-size: 12px;
+	margin: 10px 10px 0;
+}
+.ff-app .add-player-modal .add-league-players-list {
+	clear: both;
+	padding: 15px 0 0;
+}
+.ff-app .add-player-modal .add-league-players-list li {
+	margin: 7px 0;
+}
+.ff-app .add-player-modal .add-league-players-list li > div {
+	padding: 0 3px;
+}
+.ff-app .add-player-modal .add-league-players-list li .player-details p {
+	margin: 0;
+}
+.ff-app .add-player-modal .add-league-players-list li .player-details .player-email-address {
+	font-size: 12px;
+}
+.ff-app .add-player-modal .player-checkbox {
+	margin: 7px 0 0;
+	text-align: center;
+}
+.ff-app .add-player-modal .add-league-players-list select {
+	height: 30px;
+	margin: 2px 0 0;
+	font-size: 12px;
+}
+.ff-app .update-player-modal > label {
+	padding: 10px;
+	text-align: right;
+}
+.ff-app .update-player-modal > div {
+	padding: 5px;
+}
+@media (min-width: 768px) {
+	.ff-app .sidebar-nav .search {
+		display: none;
+	}
+}
+@media (max-width: 768px) {
+	.ff-app .navbar-top-links .search {
+		display: none;
+	}
+	.ff-app .ff-app-content .content {
+		padding: 0;
+	}
+	.ff-app .ff-app-content .content.with-nav {
+		margin: 0;
+		padding: 0 15px;
+	}
+	.ff-app .navbar .navbar-right {
+    	top: 0;
+    	right: 50px;
+		position: absolute;
+	}
+	.ff-app .navbar .sidebar {
+		padding: 0;
+		top: inherit;
+		width: inherit;
+		position: inherit;
+	}
+	.ff-app .navbar .sidebar li a.active {
+		background-color: inherit;
+	}
+	.ff-app .navbar .sidebar .sidebar-nav {
+		padding: 10px;
+	}
+	.ff-app .sidebar-nav .search .custom-search-form {
+		width: 100%;
+	}
+}

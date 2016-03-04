@@ -1,0 +1,53 @@
+//Default config for my app
+{
+  "express": {
+    "port": "3001",
+    "middleware": ["express-static", "body-parser", "session"],
+    /*"middleware": ["csrf", "express-static", "body-parser", "session"],*/
+    "middleware$": ["mongodb"]
+  },
+  "cluster": {
+    "maxWorkers": 1
+  },
+  "security": {
+    "key": "testkey" //When set, don't prompt during startup for password
+  },
+  "logger": {
+  },
+  /*"csrf": {
+    "allowedOrigins": ["http://localhost:3001", "chrome-extension://fdmmgilgnpjigdojojpjoooidkmcomcm"]
+  },*/
+
+  "express-static": {
+    "docs": "client"
+  },
+
+  "body-parser": {
+    "json": {},
+    "urlencoded": {
+     "extended": false
+    }
+  },
+
+
+  "session": {
+    "keys": ["sessionkey"]
+  },
+  
+  "mongodb": {
+  	"url": "mongodb://127.0.0.1/fantasyFootball"
+  }/*,
+
+  "google-oauth": {
+    "callbackPath": "/auth",
+    "signoutPath": "/logout",
+    "clientId": "826839015121-rs7t7ick1ib0uvui9iihbb82gcqg64r9.apps.googleusercontent.com",
+    "clientSecret": "<REPLACE ME>",
+    "redirectURI": "postmessage",
+    "profile": true
+  },
+
+  "google-jwt": {
+    "clientId": "826839015121-rs7t7ick1ib0uvui9iihbb82gcqg64r9.apps.googleusercontent.com"
+  }*/
+}

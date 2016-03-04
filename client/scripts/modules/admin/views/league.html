@@ -1,0 +1,219 @@
+<div class="col-xs-12">
+	<section class="app-widget">
+		<div class="app-widget-body league-details">
+			<form class="form-horizontal" role="form" ng-submit="league._id ? updateLeague() : createLeague()">
+      			<input type="hidden" id="leagueId" ng-model="league._id">
+      			<input type="hidden" id="leagueAssociation" ng-model="league.association">
+   				<p class="col-xs-12 error-text" ng-if="message">
+   					{{ ::message }}
+  				</p>
+  				<div class="form-group">
+      				<label class="col-xs-12" for="leagueName">League Name:</label>
+      				<div class="col-xs-12">
+      					<input type="text" id="leagueName" class="form-control" ng-model="league.name" placeholder="League Name..." required>
+  					</div>
+  				</div>
+  				<div class="form-group">
+      				<label class="col-xs-12" for="leagueDesc">Description:</label>
+      				<div class="col-xs-12">
+      					<textarea rows="3" id="leagueDesc" class="form-control" ng-model="league.description" placeholder="Description..."></textarea>
+  					</div>
+  				</div>
+  				<div class="form-group">
+      				<label class="col-xs-12" for="playerPoints">Player Points:</label>
+      				<div class="col-xs-12">
+      					<input type="text" id="playerPoints" class="form-control" ng-model="league.rules.playerPoints" placeholder="Player Points..." required>
+  					</div>
+  				</div>
+  				<div class="form-group">
+      				<label class="col-xs-12" for="playerPoints">Maximum Teams Per Player:</label>
+      				<div class="col-xs-12">
+      					<input type="text" id="playerPoints" class="form-control" ng-model="league.rules.maxPlayerTeams" placeholder="Maximum Teams Per Player..." required>
+  					</div>
+  				</div>
+  				<div class="form-group">
+      				<label class="col-xs-12" for="playerPoints">Player Teams Per Conference:</label>
+      				<div class="col-xs-12">
+      					<input type="text" id="playerPoints" class="form-control" ng-model="league.rules.playerTeamsPerConference" placeholder="Player Teams Per Conference..." required>
+  					</div>
+  				</div>
+  				<div class="form-group">
+  					<div class="col-xs-12">
+	      				<p class="group-label">Conferences:</p>
+						<a ng-click="addConferenceDialog()" class="add-league-object"><i class="fa fa-plus-square"></i></a>
+						<div class="clear-both"></div>
+					</div>
+      				<div class="col-xs-12">
+						<ul	class="list group-list">
+							<li ng-repeat="conference in league.conferences">
+								<div class="col-xs-7 col-sm-9 conference-name">{{ conference.name }}</div>
+								<div class="col-xs-5 col-sm-3 app-functions">
+									<div class="app-function">
+										<a ng-click="deleteConferenceDialog($index)"><i class="fa fa-trash"></i></a>
+									</div>
+									<div class="app-function">
+										<a ng-click="updateConferenceDialog($index)"><i class="fa fa-edit"></i></a>
+									</div>
+								</div>
+								<div class="clear-both"></div>
+							</li>
+						</ul>
+  					</div>
+  				</div>
+  				<div class="form-group">
+  					<div class="col-xs-12">
+	      				<p class="group-label">Teams:</p>
+						<a ng-click="addPlayerDialog(league)" class="add-league-object"><i class="fa fa-plus-square"></i></a>
+						<div class="clear-both"></div>
+					</div>
+      				<div class="col-xs-12">
+						<ul	class="list group-list">
+							<li ng-repeat="player in league.players">
+								<div class="col-xs-7 col-sm-5 col-md-4 team-name">
+									<p>{{ player.leagues[0].teamName }}</p>
+									<p class="player-name">{{ ::player.firstName }} {{ ::player.lastName }}</p>
+								</div>
+								<div class="hidden-xs hidden-sm col-md-3 player-email-address">
+									{{ ::player.emailAddress }}									
+								</div>
+								<div class="hidden-xs col-sm-4 col-md-3 player-conference">
+									{{ player.leagues[0].conference }}
+								</div>
+								<div class="col-xs-5 col-sm-3 col-md-2 app-functions">
+									<div class="app-function">
+										<a ng-click="deletePlayerDialog($index)"><i class="fa fa-trash"></i></a>
+									</div>
+									<div class="app-function">
+										<a ng-click="updatePlayerDialog($index)"><i class="fa fa-edit"></i></a>
+									</div>
+								</div>
+								<div class="clear-both"></div>
+							</li>
+						</ul>
+  					</div>
+  				</div>
+    			<div class="form-group">
+      				<div class="col-xs-12 button-wrapper">
+        				<button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        				<button type="submit" class="btn btn-default">Submit</button>
+      				</div>
+   				</div>
+  			</form>
+		</div>
+		<!-- Manage League Conference Modal -->
+		<script type="text/ng-template" id="manageLeagueConferenceModal.html">
+	        <div class="modal-header">
+	            <h5 class="modal-title">League Conference</h5>
+	        </div>
+	        <div class="modal-body">
+   				<label class="col-xs-5 col-sm-4 conferenceName" for="conference">Conference Name:</label>
+   				<div class="col-xs-7 col-sm-8">
+					<input type="text" id="conference" class="form-control" ng-model="conference.name" placeholder="Conference Name...">
+				</div>
+  				<div class="clear-both"></div>
+	        </div>
+	        <div class="modal-footer">
+	            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+	            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	        </div>
+	    </script>
+		<!-- Delete League Conference Modal -->
+		<script type="text/ng-template" id="deleteLeagueConferenceModal.html">
+	        <div class="modal-header">
+	            <h5 class="modal-title">Are you sure you want to delete {{ ::conference.name }}?</h5>
+	        </div>
+	        <div class="modal-footer">
+	            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+	            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	        </div>
+	    </script>
+		<!-- Add League Player Modal -->
+		<script type="text/ng-template" id="addLeaguePlayerModal.html">
+	        <div class="modal-header">
+	            <h5 class="modal-title">Add League Player</h5>
+	        </div>
+	        <div class="modal-body add-player-modal">
+				<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.msg}}</uib-alert>
+   				<label class="col-xs-3 conferenceName" for="search">Search:</label>
+   				<div class="col-xs-9">
+   					<div class="input-group">
+						<input type="text" ng-model="playerSearchTerm" placeholder="Search..." uib-typeahead="player for player in findPlayers($viewValue)" typeahead-loading="loadingPlayers" typeahead-on-select="setPlayerSelected(true)" ng-change="setPlayerSelected(false)" typeahead-no-results="noPlayersFound" typeahead-min-length="2" class="form-control">
+					    <i ng-show="loadingPlayers" class="glyphicon glyphicon-refresh"></i>
+	    				<span class="input-group-btn">
+	     					<button class="btn btn-default" type="button" ng-click="searchPlayers()">
+	      						<i class="fa fa-search"></i>
+	     					</button>
+	    				</span>
+	    			</div>
+					<div ng-show="noPlayersFound" class="no-players-found">
+				    	No Players Found
+					</div>
+				</div>
+				<ul class="list add-league-players-list">
+					<li ng-repeat="player in playerResults">
+						<div class="col-xs-1 player-checkbox">
+							<input type="checkbox" ng-click="addRemovePlayer($index)">
+						</div>
+						<div class="col-xs-5 col-md-3 player-details">
+							<p>{{ ::player.firstName }} {{ ::player.lastName }}</p>
+							<p class="player-email-address">({{ ::player.emailAddress }})</p>
+						</div>
+						<div class="col-xs-3 col-md-4 player-type">
+							<select ng-model="player_type_$index" ng-options="userType as userType.value for userType in userTypes" ng-change="updatePlayerType($index,player_type_$index)" class="form-control">
+							</select>
+						</div>
+						<div class="col-xs-3 col-md-4 player-conference">
+							<select ng-model="player_conference_$index" ng-options="conference as conference.name for conference in league.conferences" ng-change="updatePlayerConference($index,player_conference_$index)" class="form-control">
+							</select>
+						</div>
+						<div class="clear-both"></div>
+					</li>
+				</ul>
+  				<div class="clear-both"></div>
+	        </div>
+	        <div class="modal-footer">
+	            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+	            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	        </div>
+	    </script>
+		<!-- Update League Player Modal -->
+		<script type="text/ng-template" id="updateLeaguePlayerModal.html">
+	        <div class="modal-header">
+	            <h5 class="modal-title">Update {{ ::player.firstName }} {{ ::player.lastName }}</h5>
+	        </div>
+	        <div class="modal-body update-player-modal">
+
+   				<label class="col-xs-5 col-sm-4 conference" for="conference">Conference:</label>
+   				<div class="col-xs-7 col-sm-8">
+					<select id="conference" ng-model="player.conference" ng-options="conference as conference.name for conference in conferences track by conference.name" class="form-control">
+					</select>
+				</div>
+   				<label class="col-xs-5 col-sm-4 user-type" for="userType">User Type:</label>
+   				<div class="col-xs-7 col-sm-8">
+					<select id="userType" ng-model="player.userType" ng-options="userType.value for userType in userTypes" class="form-control">
+					</select>
+				</div>
+   				<label class="col-xs-5 col-sm-4 team-name" for="teamName">Team Name:</label>
+   				<div class="col-xs-7 col-sm-8">
+					<input type="text" id="teamName" class="form-control" ng-model="player.teamName" placeholder="Team Name...">
+				</div>
+  				<div class="clear-both"></div>
+	        	
+	        </div>
+	        <div class="modal-footer">
+	            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+	            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	        </div>
+	    </script>	    
+		<!-- Delete League Player Modal -->
+		<script type="text/ng-template" id="deleteLeaguePlayerModal.html">
+	        <div class="modal-header">
+	            <h5 class="modal-title">Are you sure you want to delete {{ ::player.firstName }} {{ ::player.lastName }}?</h5>
+	        </div>
+	        <div class="modal-footer">
+	            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+	            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	        </div>
+	    </script>
+	</section>
+</div>

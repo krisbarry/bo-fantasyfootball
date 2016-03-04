@@ -1,0 +1,41 @@
+{
+  "get /player/:id": {
+    "handler": "player.getPlayer"
+  },
+  
+  "get /player": {
+    "handler": "player.getPlayers"
+  },
+
+  "put /player/:id": {
+    "handler": "player.updatePlayer"
+  },
+
+  "post /player": {
+    "handler": "player.createPlayer"
+  },
+
+  "delete /player/:id": {
+    "handler": "player.deletePlayer"
+  },
+
+  "get /league/:id": {
+    "handler": "league.getLeague"
+  },
+
+  "get /league": {
+    "handler": "league.getLeagues"
+  },
+
+  "put /league/:id": {
+    "handler": "league.updateLeague"
+  },
+
+  "post /league": {
+    "handler": "league.createLeague"
+  },
+
+  "delete /league/:id": {
+    "handler": "league.deleteLeague"
+  }
+}

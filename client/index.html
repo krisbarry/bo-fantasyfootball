@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fantasy Football</title>
+    <link rel='stylesheet' href='styles/style.css' />
+    <link rel='stylesheet' href='bower_components/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='bower_components/font-awesome/css/font-awesome.min.css' />
+  </head>
+  <body ng-app="ff-app" class="ff-app">
+   <div ng-controller="rootCtrl">
+
+    <nav class="navbar navbar-default navbar-static-top">     
+	 <top-nav></top-nav>
+	 <side-nav ng-if="isUserAuthenticated()"></top-nav>
+    </nav>
+
+    <div class="ff-app-content">
+	    <div ui-view="content" class="content {{ isUserAuthenticated() ? 'with-nav':'' }}" ng-cloak></div>
+	</div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="scripts/ffAppModule.js"></script>
+    <script src="scripts/constants/ffAppConstants.js"></script>
+    <script src="scripts/constants/ffAppMenuItems.js"></script>
+    <script src="scripts/directives/sideNav.js"></script>
+    <script src="scripts/directives/topNav.js"></script>
+    <script src="scripts/controllers/rootCtrl.js"></script>
+    <script src="scripts/controllers/loginCtrl.js"></script>
+    <script src="scripts/controllers/profileCtrl.js"></script>
+    <script src="scripts/services/services.js"></script>
+    <script src="scripts/services/navigationService.js"></script>
+    <script src="scripts/services/leagueResource.js"></script>
+    <script src="scripts/services/playerResource.js"></script>
+    <script src="scripts/services/teamResource.js"></script>
+    <script src="scripts/modules/admin/adminModule.js"></script>
+    <script src="scripts/modules/admin/controllers/allBidsCtrl.js"></script>
+    <script src="scripts/modules/admin/controllers/allLeaguesCtrl.js"></script>
+    <script src="scripts/modules/admin/controllers/allPlayersCtrl.js"></script>
+    <script src="scripts/modules/admin/controllers/leagueDetailsCtrl.js"></script>
+    <script src="scripts/modules/admin/controllers/playerDetailsCtrl.js"></script>
+    <script src="scripts/modules/home/homeModule.js"></script>
+    <script src="scripts/modules/home/controllers/homeCtrl.js"></script>
+    <script src="scripts/modules/team/teamModule.js"></script>
+    <script src="scripts/modules/team/controllers/teamCtrl.js"></script>
+
+   </div>
+  </body>
+</html>

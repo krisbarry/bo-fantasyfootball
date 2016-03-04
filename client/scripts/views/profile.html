@@ -1,0 +1,52 @@
+<h3 class="page-title" ng-if="showProfileTitle">{{ ::profile.firstName }} {{ ::profile.lastName }}'s Profile</h3>
+<div class="col-xs-12">
+	<section class="app-widget">
+		<div class="profile-body">
+			<form class="form-horizontal" role="form" ng-submit="profile._id ? updateProfile() : createProfile()">
+				<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}">{{alert.msg}}</uib-alert>
+ 				<div class="form-group">
+      				<label class="col-xs-12" for="firstName">First Name:</label>
+      				<div class="col-xs-12">
+        				<input type="text" id="firstName" class="form-control" ng-model="profile.firstName" placeholder="First Name..." required>
+      				</div>
+				</div>
+   				<div class="form-group">
+      				<label class="col-xs-12" for="lastName">Last Name:</label>
+      				<div class="col-xs-12">
+        				<input type="text" id="lastName" class="form-control" ng-model="profile.lastName" placeholder="Last Name..." required>
+      				</div>
+    			</div>
+   				<div class="form-group">
+      				<label class="col-xs-12" for="nickname">Nickname:</label>
+      				<div class="col-xs-12">
+        				<input type="text" id="nickname" class="form-control" ng-model="profile.nickname" placeholder="Nickname...">
+      				</div>
+    			</div>
+   				<div class="form-group">
+      				<label class="col-xs-12" for="emailAddress">Email:</label>
+      				<div class="col-xs-12">
+        				<input type="email" id="emailAddress" class="form-control" ng-model="profile.emailAddress" placeholder="Email address..." required>
+      				</div>
+    			</div>
+			    <div class="form-group">
+			    	<label class="col-xs-12" for="password">Password:</label>
+      				<div class="col-xs-12">
+        				<input type="password" id="password" class="form-control" ng-model="password" placeholder="Password...">
+      				</div>
+    			</div>
+			    <div class="form-group">
+			    	<label class="col-xs-12" for="confirmPassword">Confirm Password:</label>
+      				<div class="col-xs-12">
+     					<input type="password" id="confirmPassword" class="form-control" ng-model="confirmPassword" placeholder="Password...">
+  					</div>
+    			</div>
+    			<div class="form-group">        
+      				<div class="col-xs-12 button-wrapper">
+        				<button type="submit" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        				<button type="submit" class="btn btn-default">Submit</button>
+      				</div>
+    			</div>
+  			</form>
+		</div>
+	</section>
+</div>
